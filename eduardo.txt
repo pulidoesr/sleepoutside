@@ -4,5 +4,7 @@ git remote add ep-branch-test
 git add .
 git push -u sleepoutside ep-branch-test
 git commit -m "add branch"
-git remot set-url --push sleepoutside https://github.com/pulidoesr/sleepoutside
+git remote set-url --push sleepoutside https://github.com/pulidoesr/sleepoutside
+git remote remove origin
+git remote -v
 
