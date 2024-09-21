@@ -1,2 +1,2 @@
 Eduardo Pulido
-Eduardo Pulido
+git remote add -m main sleepoutside https://github.com/pulidoesr/sleepoutside           
