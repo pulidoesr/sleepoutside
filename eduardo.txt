@@ -7,4 +7,5 @@ git commit -m "add branch"
 git remote set-url --push sleepoutside https://github.com/pulidoesr/sleepoutside
 git remote remove origin
 git remote -v
-
+git checkout -b ep-individual1
+git push -u sleepoutside ep-individual1
