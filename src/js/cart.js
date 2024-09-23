@@ -14,7 +14,8 @@ function renderCartContents() {
     // return; // Exit if cartItems is not an array
   }
   
-  const htmlItems = modifiedcartItems.map((item) => cartItemTemplate(item));
+  // const htmlItems = modifiedcartItems.map((item) => cartItemTemplate(item));
+  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
 
