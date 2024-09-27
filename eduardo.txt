@@ -9,3 +9,11 @@ git remote remove origin
 git remote -v
 git checkout -b ep-individual1
 git push -u sleepoutside ep-individual1
+
+// Catch errors
+The command npm run lint is used to run a linter in a Node.js or JavaScript project. A linter is a tool that analyzes your code to find and report problems, which helps to improve code quality, maintainability, and consistency.
+npm run lint
+
+// Format js
+The command npm run format is typically used to run a code formatter on your project files. A code formatter is a tool that automatically formats your code according to a predefined set of style rules. This ensures that the code follows a consistent style across the entire project, making it easier to read, maintain, and collaborate on.
+npm run format
