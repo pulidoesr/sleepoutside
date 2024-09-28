@@ -1,4 +1,3 @@
-
 // class ProductData that fetches the product data
 import ProductListing from './ProductList.mjs';
 import ProductData from './ProductData.mjs';
@@ -17,5 +16,3 @@ const Listing = new ProductListing(category, dataSource, Element);
 
 // Initialize the listing (this will fetch the data and render the list)
 Listing.init();
-
-
