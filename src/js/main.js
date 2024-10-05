@@ -1,6 +1,12 @@
 // class ProductData that fetches the product data
-import ProductListing from './ProductList.mjs';
+import { loadHeaderFooter } from "./utils.mjs";
 import ProductData from './ProductData.mjs';
+import ProductListing from './ProductList.mjs';
+
+
+
+// load Header and Footer
+loadHeaderFooter();
 
 // Define the category you want to display, for example 'tents'
 const category = 'tents';
