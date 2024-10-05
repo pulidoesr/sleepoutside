@@ -1,11 +1,12 @@
-<form id="formElem"></form>
-  <input type="text" name="name" value="John">
-  <input type="text" name="surname" value="Smith">
+<!DOCTYPE html>
+<form id="formElem">
+  <input type="text" name="name" value="John" autocomplete="given-name">
+  <input type="text" name="surname" value="Smith" autocomplete="family-name">
   <input type="submit">
 </form>
 
 <script>
-    formElem.onsubmit = async (e) => {
+/*     formElem.onsubmit = async (e) => {
     e.preventDefault();
 
     let response = await fetch('/article/formdata/post/user', {
@@ -16,8 +17,8 @@
     let result = await response.json();
     alert(result.message);
   };
-
- /*  document.addEventListener('DOMContentLoaded', () => {
+ */
+  document.addEventListener('DOMContentLoaded', () => {
   const formElem = document.getElementById('formElem');
   formElem.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -27,5 +28,5 @@
       console.log(key, formData.get(key));
     }
   });
-}); */
+});
 </script>
