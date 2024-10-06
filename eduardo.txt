@@ -17,3 +17,10 @@ npm run lint
 // Format js
 The command npm run format is typically used to run a code formatter on your project files. A code formatter is a tool that automatically formats your code according to a predefined set of style rules. This ensures that the code follows a consistent style across the entire project, making it easier to read, maintain, and collaborate on.
 npm run format
+
+Brainstorming ideas
+1. Course selection
+2. Subscriptions Options
+3. Donations 
+4. Events booking
+5. Food delivery
