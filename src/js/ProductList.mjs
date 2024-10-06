@@ -10,13 +10,13 @@ function productCardTemplate(product) {
         </li>`
 }
 
-function filterElements(arr) {
+/* function filterElements(arr) {
   // remove specific items from the array
   return arr.filter(item => !['989CG', '880RT'].includes(item.Id));
 
-}
+} */
 
-export default class ProductListing {
+export default class ProductList {
   constructor(category, dataSource, listElement) {
     // We passed in this information to make our class as reusable as possible.
     // Being able to define these things when we use the class will make it very flexible
@@ -24,18 +24,18 @@ export default class ProductListing {
     this.dataSource = dataSource;
     this.listElement = listElement;
   }
-
   async init() {
     // our dataSource will return a Promise...so we can use await to resolve it.
-    const list = await this.dataSource.getData();
-    let filterList = [];
-    // render the list - to be completed
-    filterList = filterElements(list);
-    this.renderList(filterList);
+    const list = await this.dataSource.getData(this.category);
+    // render the list
+    this.renderList(list);
+    //set the title to the current category
+    document.querySelector(".title").innerHTML = this.category;
   }
   // render after doing the first stretch
   renderList(list) {
     renderListWithTemplate(productCardTemplate, this.listElement, list);
-  } 
-  
+  }
+
+
 }

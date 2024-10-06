@@ -13,23 +13,13 @@ export function getLocalStorage(key) {
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
-// set a listener for both touchend and click
-export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
-    event.preventDefault();
-    callback();
-  });
-  qs(selector).addEventListener("click", callback);
-}
+
 
 // Get parameters
 export function getParams(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
-  console.log(queryString);
-  console.log(urlParams);
-  console.log(product);
   return product;
 }
 
@@ -40,8 +30,14 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
     parentElement.innerHTML = '';
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
-}
+} 
+// Function
 
+async function loadTemplate(path) {
+  const res = await fetch(path);
+  const template = await res.text();
+  return template;
+}
 
 // Render Template
 export function renderWithTemplate(template, parentElement, data, callback) {
@@ -49,14 +45,6 @@ export function renderWithTemplate(template, parentElement, data, callback) {
   if (callback) {
     callback(data);
   }
-}
-
-// Function
-
-async function loadTemplate(path) {
-  const res = await fetch(path);
-  const template = await res.text();
-  return template;
 }
 
 // General loader Header & Footer
@@ -71,3 +59,11 @@ export async function loadHeaderFooter() {
   
 }
 
+// set a listener for both touchend and click
+export function setClick(selector, callback) {
+  qs(selector).addEventListener("touchend", (event) => {
+    event.preventDefault();
+    callback();
+  });
+  qs(selector).addEventListener("click", callback);
+}
