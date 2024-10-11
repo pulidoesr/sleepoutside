@@ -4,3 +4,34 @@ Brainstorming ideas
 3. Donations 
 4. Events booking
 5. Food delivery
+6.  OpenWeatherMap API
+Data: Weather data for any location in the world.
+Use Case: You can build weather apps, dashboards, or widgets.
+Website: https://openweathermap.org/api
+{
+  "coord": { "lon": 139, "lat": 35 },
+  "weather": [{ "id": 800, "main": "Clear", "description": "clear sky" }],
+  "main": { "temp": 293.25 }
+}
+7.  REST Countries API
+Data: Information about countries, such as population, languages, capital, etc.
+Use Case: Build geography-based applications or integrate country data into forms.
+Website: https://restcountries.com
+{
+  "name": "Afghanistan",
+  "capital": "Kabul",
+  "population": 27657145,
+  "languages": [{ "name": "Pashto" }]
+}
+
+8. CoinGecko API
+Data: Cryptocurrency prices, market data, and other related information.
+Use Case: Build a cryptocurrency price tracker or dashboard.
+Website: https://www.coingecko.com/en/api
+ {
+  "id": "bitcoin",
+  "symbol": "btc",
+  "name": "Bitcoin",
+  "market_data": { "current_price": { "usd": 50000 } }
+}
+
