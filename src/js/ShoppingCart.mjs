@@ -25,9 +25,15 @@ export default class ShoppingCart {
     this.parentSelector = parentSelector;
   }
   renderCartContents() {
+    let totalCart = 0;
     const cartItems = getLocalStorage(this.key);
-    console.log(cartItems);
+    
     const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+    const cartElement = document.querySelector('#totalcart');
+    cartItems.map((item) => totalCart += item.FinalPrice);
+    console.log(totalCart);
+    const totalHtml = `<p class="cart-card__total_cart">Total Cart $${totalCart.toFixed(2)}</p>`;
     document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
+    cartElement.insertAdjacentHTML('beforeend', totalHtml);
   }
 }
