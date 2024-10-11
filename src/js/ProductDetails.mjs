@@ -1,4 +1,5 @@
 import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+import {qs} from "./utils.mjs";
 
 function productDetailsTemplate(product) {
   return `<section class="product-detail"> <h3>${product.Brand.Name}</h3>
@@ -36,7 +37,10 @@ export default class ProductDetails {
       .addEventListener("click", this.addToCart.bind(this));
   }
   addToCart() {
-    setLocalStorage("so-cart", this.product);
+    let cartContents = getLocalStorage("so-cart");
+    // Now cartContents is guaranteed to be an array
+    cartContents.push(this.product);
+    setLocalStorage("so-cart", JSON.stringify(cartContents)); // Store as JSON string
   }
   renderProductDetails(selector) {
     const element = document.querySelector(selector);
