@@ -258,8 +258,6 @@ button {
     grid-template-columns: 150px auto 15%;
   }
 }
-
-
     /* Summary section */
     .summary {
       width: 100%; /* Take full width of the container */

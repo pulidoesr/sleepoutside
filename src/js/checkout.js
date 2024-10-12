@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from './utils.mjs';
-
+import cartSummary from './checkoutprocess.mjs';
 
 loadHeaderFooter();
 
@@ -33,17 +33,13 @@ loadHeaderFooter();
     // You can now send the form data to the server or handle it as needed
   });
 
-    // Initialize order summary values
-    let subtotal = 100;  // Example subtotal value
-    let shipping = 5;    // Example shipping value
-    let tax = subtotal * 0.08;  // Example tax calculation (8%)
-    let orderTotal = subtotal + shipping + tax;
+    
   
     // Update the HTML to show the order summary
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
-    document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
-    document.getElementById('orderTotal').textContent = `$${orderTotal.toFixed(2)}`;
   
+    const summary = new cartSummary('so-cart');
+    summary.calculateSummary(); // Make sure this is executed
+    
+    
 
   
