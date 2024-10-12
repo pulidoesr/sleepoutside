@@ -2,6 +2,8 @@ import { loadHeaderFooter } from './utils.mjs';
 import checkoutProcess from './checkoutprocess.mjs';
 
 loadHeaderFooter();
+const myCheckout = new checkoutProcess("so-cart", ".checkout-summary");
+myCheckout.init();
 
   // Get all input fields and the submit button
   const form = document.getElementById('checkoutForm');
@@ -31,6 +33,7 @@ loadHeaderFooter();
     e.preventDefault(); // Prevent the form from submitting in the traditional way
     alert('Form submitted successfully!');
     // You can now send the form data to the server or handle it as needed
+    myCheckout.checkout();
   });
 
   
