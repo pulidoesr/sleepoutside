@@ -38,6 +38,9 @@ export default class ProductDetails {
   }
   addToCart() {
     let cartContents = getLocalStorage("so-cart");
+    if (!cartContents) {
+      cartContents = [];
+    }
     // Now cartContents is guaranteed to be an array
     cartContents.push(this.product);
     setLocalStorage("so-cart", JSON.stringify(cartContents)); // Store as JSON string
