@@ -137,8 +137,8 @@ button {
 /* product grid styles */
 .product-grid {
   list-style-type: none;
-  font-size: 0.5rem; 
-  gap: 20px; 
+  font-size: 0.5rem;
+  gap: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -258,26 +258,25 @@ button {
     grid-template-columns: 150px auto 15%;
   }
 }
-    /* Summary section */
-    .summary {
-      width: 100%; /* Take full width of the container */
-      margin-top: 20px;
-      padding: 1em;
-      background: #f2f2f2;
-      border-radius: 5px;
-      font-size: 1.1em;
-    }
+/* Summary section */
+.summary {
+  width: 100%; /* Take full width of the container */
+  margin-top: 20px;
+  padding: 1em;
+  background: #f2f2f2;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
 
-    .summary h2 {
-      margin-bottom: 20px;
-    }
+.summary h2 {
+  margin-bottom: 20px;
+}
 
-    .summary p {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 0;
-    }
-
+.summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
 
 footer {
   font-size: var(--small-font);

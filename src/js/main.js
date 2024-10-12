@@ -4,7 +4,6 @@ import { loadHeaderFooter } from './utils.mjs';
 import ProductListing from './ProductList.mjs';
  */
 
-
 // load Header and Footer
 loadHeaderFooter();
 

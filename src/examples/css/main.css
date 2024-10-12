@@ -1,11 +1,14 @@
-
 @keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
 }
 
 /* Keyword values */
-div{
+div {
   transform: none;
 }
 /* Function values */

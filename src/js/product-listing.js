@@ -3,13 +3,11 @@ import { loadHeaderFooter, getParams } from './utils.mjs';
 import ExternalServices from './ExternalServices.mjs';
 import ProductList from './ProductList.mjs';
 
-
-
 // load Header and Footer
 loadHeaderFooter();
 
 // Define the category you want to display, for example 'tents'
-const category = getParams('category')
+const category = getParams('category');
 
 // Create an instance of ExternalServices that will provide the product data
 const dataSource = new ExternalServices();

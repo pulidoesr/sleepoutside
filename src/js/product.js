@@ -1,4 +1,3 @@
-
 import ExternalServices from './ExternalServices.mjs';
 import ProductDetails from './ProductDetails.mjs';
 import { loadHeaderFooter, getParams } from './utils.mjs';

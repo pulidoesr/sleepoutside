@@ -14,7 +14,7 @@ function renderCartContents() {
     console.error('Cart items are not an array:', cartItems);
     console.log(typeof cartItems);
     console.log(modifiedcartItems); */
-    // return; // Exit if cartItems is not an array
+  // return; // Exit if cartItems is not an array
   // }
 
   // const htmlItems = modifiedcartItems.map((item) => cartItemTemplate(item));
