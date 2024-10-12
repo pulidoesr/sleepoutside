@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from './utils.mjs';
-import cartSummary from './checkoutprocess.mjs';
+import checkoutProcess from './checkoutprocess.mjs';
 
 loadHeaderFooter();
 
@@ -33,12 +33,12 @@ loadHeaderFooter();
     // You can now send the form data to the server or handle it as needed
   });
 
-    
   
-    // Update the HTML to show the order summary
+// Update the HTML to show the order summary
   
-    const summary = new cartSummary('so-cart');
-    summary.calculateSummary(); // Make sure this is executed
+const myCheckOutProcess = new checkoutProcess("so-cart", ".checkout-summary");
+myCheckOutProcess.init();
+myCheckOutProcess.calculateSummary(); // Make sure this is executed
     
     
 
