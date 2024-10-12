@@ -1,6 +1,6 @@
-// class ProductData that fetches the product data
+// class ExternalServices that fetches the product data
 import { loadHeaderFooter } from './utils.mjs';
-/* import ProductData from './ProductData.mjs';
+/* import ExternalServices from './ExternalServices.mjs';
 import ProductListing from './ProductList.mjs';
  */
 
@@ -11,8 +11,8 @@ loadHeaderFooter();
 // Define the category you want to display, for example 'tents'
 // const category = 'tents';
 
-// Create an instance of ProductData that will provide the product data
-// const dataSource = new ProductData('tents');
+// Create an instance of ExternalServices that will provide the product data
+// const dataSource = new ExternalServices('tents');
 
 // Select the HTML element where the product list will be displayed
 // const Element = document.querySelector('.product-list');

@@ -1,6 +1,6 @@
-// class ProductData that fetches the product data
+// class ExternalServices that fetches the product data
 import { loadHeaderFooter, getParams } from './utils.mjs';
-import ProductData from './ProductData.mjs';
+import ExternalServices from './ExternalServices.mjs';
 import ProductList from './ProductList.mjs';
 
 
@@ -11,8 +11,8 @@ loadHeaderFooter();
 // Define the category you want to display, for example 'tents'
 const category = getParams('category')
 
-// Create an instance of ProductData that will provide the product data
-const dataSource = new ProductData();
+// Create an instance of ExternalServices that will provide the product data
+const dataSource = new ExternalServices();
 
 // then get the element we want the product list to render in
 const element = document.querySelector('.product-list');
