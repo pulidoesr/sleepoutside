@@ -1,4 +1,7 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage,
+         setLocalStorage, 
+         removeAllAlerts, 
+         alertMessage } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
@@ -30,6 +33,7 @@ export default class checkoutProcess {
     this.key = key;
     this.outputSelector = outputSelector;
     this.list = [];
+    this.subtotal =0;
     this.itemTotal = 0;
     this.shipping = 0;
     this.tax = 0;
@@ -42,23 +46,19 @@ export default class checkoutProcess {
  
   calculateSummary() {
     // Initialize order summary values
-    let subtotal = 0;  // Example subtotal value
-    let shipping = 0;    // Example shipping value
-    let tax = 0;  // Example tax calculation (6%)
-    let orderTotal = 0;
-    // const cartItems = getLocalStorage(this.key);
-    this.list.map((item) => subtotal += item.FinalPrice);
-    shipping = 10 + (this.list.length - 1)* 2;
-    tax = (subtotal + shipping) * 0.06;
-    orderTotal = subtotal + shipping + tax; 
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
-    document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
-    document.getElementById('orderTotal').textContent = `$${orderTotal.toFixed(2)}`;
+   // const cartItems = getLocalStorage(this.key);
+    this.list.map((item) => this.subtotal += item.FinalPrice);
+    this.shipping = 10 + (this.list.length - 1)* 2;
+    this.tax = (this.subtotal + this.shipping) * 0.06;
+    this.orderTotal = this.subtotal + this.shipping + this.tax; 
+    document.getElementById('subtotal').textContent = `$${this.subtotal.toFixed(2)}`;
+    document.getElementById('shipping').textContent = `$${this.shipping.toFixed(2)}`;
+    document.getElementById('tax').textContent = `$${this.tax.toFixed(2)}`;
+    document.getElementById('orderTotal').textContent = `$${this.orderTotal.toFixed(2)}`;
   
   }
   async checkout() {
-    const formElement = document.forms["checkout"];
+    const formElement = document.forms["checkoutForm"];
 
     const json = formDataToJSON(formElement);
     // add totals, and item details
@@ -71,7 +71,15 @@ export default class checkoutProcess {
     try {
       const res = await services.checkout(json);
       console.log(res);
+      setLocalStorage("so-cart", []);
+      location.assign("/checkout/success.html");
     } catch (err) {
+      // get rid of any preexisting alerts.
+      removeAllAlerts();
+      for (let message in err.message) {
+        alertMessage(err.message[message]);
+      }
+
       console.log(err);
     }
   }

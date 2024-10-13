@@ -1,17 +1,19 @@
-const baseURL = import.meta.env.VITE_SERVER_URL;
+// const baseURL = import.meta.env.VITE_SERVER_URL;
+const baseURL = "http://server-nodejs.cit.byui.edu:3000/";
 
-function convertToJson(res) {
+async function convertToJson(res) {
+  const data = await res.json();
   if (res.ok) {
-    return res.json();
+    return data;
   } else {
-    throw new Error("Bad Response");
+    // throw new Error("Bad Response");
+    throw { name: 'servicesError', message: data };
   }
 }
 
 export default class ExternalServices {
   constructor(category) {
-    /* this.category = category;
-    this.path = `../json/${this.category}.json`; */
+    
   }
   async getData(category) {
     const response = await fetch(baseURL + `products/search/${category}`);
@@ -33,4 +35,5 @@ export default class ExternalServices {
     };
     return await fetch(baseURL + "checkout/", options).then(convertToJson);
   }
-}
+  }
+
